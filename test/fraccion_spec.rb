@@ -97,11 +97,18 @@ describe Fraccion do
     (@fr.new(3, 2) / @fr.new(12, -3)).should == @fr.new(-3, 8)  
   end
   
+  it "Se debe calcular el resto dos fracciones con % y dar el resultado de forma reducida" do
+    (@fr.new(5, 1) % @fr.new(2, 1)).should == 1
+    (@fr.new(7, 1) % @fr.new(4, 1)).should == 3
+    (@fr.new(1, 2) % @fr.new(1, 4)).should == 0
+    (@fr.new(6, 1) % @fr.new(17, 1)).should == 6
+    (@fr.new(3, 5) % @fr.new(4, 7)).should == 1    
+  end
+  
 end
 
 =begin
 Fraccion
-  it "Se debe calcular el resto dos fracciones con % y dar el resultado de forma reducida" do
   it "Se debe de poder comprobar si una fracion es menor que otra" do
   it "Se debe de poder comprobar si una fracion es mayor que otra" do
   it "Se debe de poder comprobar si una fracion es menor o igual que otra" do

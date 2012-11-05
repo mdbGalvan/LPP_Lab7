@@ -61,6 +61,10 @@ class Fraccion
   def / (fr)
     self * fr.reciproco
   end
+  
+  def % (fr)
+    return ((self.num * fr.den) % (self.den * fr.num))
+  end
 
 end
 
