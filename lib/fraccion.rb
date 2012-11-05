@@ -23,5 +23,9 @@ class Fraccion
   def to_f
     @num/@den
   end
+  
+  def == (fr)
+      ((self.num == fr.num) && (self.den == fr.den))
+  end    
     
 end
