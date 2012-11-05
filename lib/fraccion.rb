@@ -16,6 +16,11 @@ class Fraccion
     b == 0 ? a : mcd(b, a % b)
   end
   
+  def mcm(a, b)
+    # Por el Alg. de Euclides, a través del mcd
+    (a * b)/mcd(a, b)
+  end
+  
   def to_s
     "#{@num}/#{@den}"
   end
@@ -40,8 +45,11 @@ class Fraccion
     Fraccion.new(-@num, @den)
   end
     
-  
-    
+  def + (fr)
+    comun = mcm(self.den, fr.den)
+    Fraccion.new(comun/self.den*self.num + comun/fr.den*fr.num, comun)
+    Fraction.new((mult / @denom * @num) + (mult / f.denom * f.num) , mult)
+  end    
 end
 
 

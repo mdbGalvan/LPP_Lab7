@@ -68,13 +68,18 @@ describe Fraccion do
     (-@fr.new(2, -4)).should == @fr.new(1, 2)
     (-@fr.new(21, 3)).should == @fr.new(-7, 1)
   end
+  
+  it "Se debe sumar dos fracciones con + y dar el resultado de forma reducida" do
+    (@fr.new(1, 1) + @fr.new(1, 1)).should == @fr.new(2, 1)
+    (@fr.new(1, 2) + @fr.new(1, 4)).should == @fr.new(3, 4)
+    (@fr.new(2, 5) + @fr.new(-3, 2)).should == @fr.new(-11, 10)
+    (@fr.new(3, 2) + @fr.new(12, -3)).should == @fr.new(-5, 2)
+  end
     
 end
 
 =begin
-Fraccion  
-  
-  it "Se debe sumar dos fracciones con + y dar el resultado de forma reducida" do
+Fraccion
   it "Se debe restar dos fracciones con - y dar el resultado de forma reducida" do
   it "Se debe multiplicar dos fracciones con * y dar el resultado de forma reducida" do
   it "Se debe dividir dos fracciones con / y dar el resultado de forma reducida" do
