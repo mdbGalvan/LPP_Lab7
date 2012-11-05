@@ -69,6 +69,10 @@ class Fraccion
   def < (fr)
     (self.num * fr.den) < (self.den * fr.num) 
   end
+  
+  def > (fr)
+    (self.num * fr.den) > (self.den * fr.num) 
+  end
 
 end
 

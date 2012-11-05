@@ -112,11 +112,16 @@ describe Fraccion do
     (@fr.new(12, -3) < @fr.new(3, 2)).should be_true
   end
   
+  it "Se debe de poder comprobar si una fracion es mayor que otra" do
+    (@fr.new(2, 1) > @fr.new(1, 1)).should be_true
+    (@fr.new(1, 2) > @fr.new(1, 4)).should be_true
+    (@fr.new(2, 5) > @fr.new(-3, 2)).should be_true
+    (@fr.new(3, 2) > @fr.new(12, -3)).should be_true  end
+  
 end
 
 =begin
 Fraccion
-  it "Se debe de poder comprobar si una fracion es mayor que otra" do
   it "Se debe de poder comprobar si una fracion es menor o igual que otra" do
   it "Se debe de poder comprobar si una fracion es mayor o igual que otra" do
 =end
