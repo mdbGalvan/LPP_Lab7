@@ -16,6 +16,9 @@ class Fraccion
     b == 0 ? a : mcd(b, a % b)
   end
   
+  def to_s
+    "#{@num}/#{@den}"
+  end
   
     
 end

@@ -5,32 +5,38 @@ require 'fraccion'
 describe Fraccion do
   
   before :each do
-    @fr = Fraccion.new(1, 2)
+    @fr = Fraccion
   end
   
   it "Debe existir un numerador" do
-    @fr.num.should equal 1
+    @fr.new(1, 2).num.should == 1
   end
   
   it "Debe existir un denominador" do
-    @fr.den.should equal 2
+    @fr.new(1, 2).den.should == 2
   end
   
   it "El denominador tiene que ser distinto de cero" do
-    lambda { Fraccion.new(1, 0)}.should raise_error(TypeError)
+    lambda { @fr.new(1, 0)}.should raise_error(TypeError)
   end
   
   it "Debe de estar en su forma reducida" do
-    Fraccion.new(2, 4).num.should equal 1
-    Fraccion.new(7, 21).den.should equal 3
+    @fr.new(2, 4).num.should == 1
+    @fr.new(7, -21).den.should == 3
   end
   
   it "Se debe invocar al metodo num() para obtener el numerador" do
-    @fr.respond_to?("num").should be_true
+    @fr.new(1, 2).respond_to?("num").should be_true
   end
 
   it "Se debe invocar al metodo denom() para obtener el denominador" do
-    @fr.respond_to?("den").should be_true
+    @fr.new(1, 2).respond_to?("den").should be_true
+  end
+  
+  it "Se debe mostar por la consola la fraccion de la forma: a/b, donde a es el numerador y b el denominador" do
+    @fr.new(1, 2).to_s.should == "1/2"
+    @fr.new(7, -21).to_s.should == "-1/3"
+    @fr.new(-2, 6).to_s.should == "-1/3"
   end
   
 end
@@ -39,7 +45,7 @@ end
 Fraccion  
   
   
-  it "Se debe mostar por la consola la fraccion de la forma: a/b, donde a es el numerador y b el denominador" do
+  
   it "Se debe mostar por la consola la fraccion en formato flotante" do
   it "Se debe comparar si dos fracciones son iguales con ==" do
   it "Se debe calcular el valor absoluto de una fraccion con el metodo abs" do
