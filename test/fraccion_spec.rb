@@ -82,13 +82,18 @@ describe Fraccion do
     (@fr.new(2, 5) - @fr.new(-3, 2)).should == @fr.new(19, 10)
     (@fr.new(3, 2) - @fr.new(12, -3)).should == @fr.new(11, 2)
   end
+  
+  it "Se debe multiplicar dos fracciones con * y dar el resultado de forma reducida" do
+    (@fr.new(1, 1) * @fr.new(1, 1)).should == @fr.new(1, 1)
+    (@fr.new(1, 2) * @fr.new(1, 4)).should == @fr.new(1, 8)
+    (@fr.new(2, 5) * @fr.new(-3, 2)).should == @fr.new(-3, 5)
+    (@fr.new(3, 2) * @fr.new(12, -3)).should == @fr.new(-6, 1)
+  end
     
 end
 
 =begin
 Fraccion
-  
-  it "Se debe multiplicar dos fracciones con * y dar el resultado de forma reducida" do
   it "Se debe dividir dos fracciones con / y dar el resultado de forma reducida" do
   it "Se debe calcular el resto dos fracciones con % y dar el resultado de forma reducida" do
   it "Se debe de poder comprobar si una fracion es menor que otra" do
