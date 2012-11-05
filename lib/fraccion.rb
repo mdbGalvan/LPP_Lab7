@@ -48,8 +48,12 @@ class Fraccion
   def + (fr)
     comun = mcm(self.den, fr.den)
     Fraccion.new(comun/self.den*self.num + comun/fr.den*fr.num, comun)
-    Fraction.new((mult / @denom * @num) + (mult / f.denom * f.num) , mult)
-  end    
+  end 
+  
+  def - (fr)
+    self + (-fr)
+  end
+  
 end
 
 
