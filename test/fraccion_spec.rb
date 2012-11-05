@@ -39,14 +39,16 @@ describe Fraccion do
     @fr.new(-2, 6).to_s.should == "-1/3"
   end
   
+  it "Se debe mostar por la consola la fraccion en formato flotante" do
+    @fr.new(1, 2).to_f.should == 1/2
+    @fr.new(7, -21).to_f.should == -1/3
+    @fr.new(-2, 6).to_f.should == -1/3
+  end
+  
 end
 
 =begin
 Fraccion  
-  
-  
-  
-  it "Se debe mostar por la consola la fraccion en formato flotante" do
   it "Se debe comparar si dos fracciones son iguales con ==" do
   it "Se debe calcular el valor absoluto de una fraccion con el metodo abs" do
   it "Se debe calcular el reciproco de una fraccion con el metodo reciprocal" do

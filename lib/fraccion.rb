@@ -20,5 +20,8 @@ class Fraccion
     "#{@num}/#{@den}"
   end
   
+  def to_f
+    @num/@den
+  end
     
 end
