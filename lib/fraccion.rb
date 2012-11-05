@@ -32,6 +32,10 @@ class Fraccion
     Fraccion.new(@num.abs, @den)
   end
   
+  def reciproco
+    Fraccion.new(@den, @num)
+  end
+  
     
 end
 

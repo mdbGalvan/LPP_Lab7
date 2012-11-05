@@ -57,11 +57,16 @@ describe Fraccion do
     @fr.new(-1, 2).abs.should_not == @fr.new(-1, 2)
   end
   
+  it "Se debe calcular el reciproco de una fraccion con el metodo reciprocal" do
+    @fr.new(-2, 3).reciproco.should == @fr.new(-3, 2)
+    @fr.new(2, -4).reciproco.should == @fr.new(-2, 1)
+    @fr.new(21, 3).reciproco.should == @fr.new(1, 7)
+  end
+  
 end
 
 =begin
 Fraccion  
-  it "Se debe calcular el reciproco de una fraccion con el metodo reciprocal" do
   it "Se debe calcular el opuesto de una fraccion con -" do
   it "Se debe sumar dos fracciones con + y dar el resultado de forma reducida" do
   it "Se debe restar dos fracciones con - y dar el resultado de forma reducida" do
