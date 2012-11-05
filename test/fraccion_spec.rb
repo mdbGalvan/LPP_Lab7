@@ -29,12 +29,16 @@ describe Fraccion do
     @fr.respond_to?("num").should be_true
   end
 
+  it "Se debe invocar al metodo denom() para obtener el denominador" do
+    @fr.respond_to?("den").should be_true
+  end
+  
 end
 
 =begin
 Fraccion  
   
-  it "Se debe invocar al metodo denom() para obtener el denominador" do
+  
   it "Se debe mostar por la consola la fraccion de la forma: a/b, donde a es el numerador y b el denominador" do
   it "Se debe mostar por la consola la fraccion en formato flotante" do
   it "Se debe comparar si dos fracciones son iguales con ==" do
