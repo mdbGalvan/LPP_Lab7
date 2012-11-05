@@ -58,6 +58,10 @@ class Fraccion
     Fraccion.new(self.num * fr.num, self.den * fr.den)
   end
   
+  def / (fr)
+    self * fr.reciproco
+  end
+
 end
 
 
