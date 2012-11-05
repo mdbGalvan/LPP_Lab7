@@ -36,6 +36,11 @@ class Fraccion
     Fraccion.new(@den, @num)
   end
   
+  def -@
+    Fraccion.new(-@num, @den)
+  end
+    
+  
     
 end
 

@@ -63,11 +63,17 @@ describe Fraccion do
     @fr.new(21, 3).reciproco.should == @fr.new(1, 7)
   end
   
+  it "Se debe calcular el opuesto de una fraccion con -" do
+    (-@fr.new(-2, 3)).should == @fr.new(2, 3)
+    (-@fr.new(2, -4)).should == @fr.new(1, 2)
+    (-@fr.new(21, 3)).should == @fr.new(-7, 1)
+  end
+    
 end
 
 =begin
 Fraccion  
-  it "Se debe calcular el opuesto de una fraccion con -" do
+  
   it "Se debe sumar dos fracciones con + y dar el resultado de forma reducida" do
   it "Se debe restar dos fracciones con - y dar el resultado de forma reducida" do
   it "Se debe multiplicar dos fracciones con * y dar el resultado de forma reducida" do
