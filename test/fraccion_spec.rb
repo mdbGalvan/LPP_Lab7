@@ -20,14 +20,16 @@ describe Fraccion do
     lambda { Fraccion.new(1, 0)}.should raise_error(TypeError)
   end
   
+  it "Debe de estar en su forma reducida" do
+    Fraccion.new(2, 4).num.should equal 1
+    Fraccion.new(7, 21).den.should equal 3
+  end
+  
 
 end
 
 =begin
-Racional
-  
-  
-  it "Debe de estar en su forma reducida" do
+Fraccion  
   it "Se debe invocar al metodo num() para obtener el numerador" do
   it "Se debe invocar al metodo denom() para obtener el denominador" do
   it "Se debe mostar por la consola la fraccion de la forma: a/b, donde a es el numerador y b el denominador" do
