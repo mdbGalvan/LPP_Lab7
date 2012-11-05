@@ -12,13 +12,17 @@ describe Fraccion do
     @fr.num.should equal 1
   end
   
+  it "Debe existir un denominador" do
+    @fr.den.should equal 2
+  end
+  
 
 end
 
 =begin
 Racional
   
-  it "Debe existir un denominador" do
+  
   it "Debe de estar en su forma reducida" do
   it "Se debe invocar al metodo num() para obtener el numerador" do
   it "Se debe invocar al metodo denom() para obtener el denominador" do
