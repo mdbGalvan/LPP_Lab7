@@ -2,7 +2,7 @@
 
 class Fraccion
   
-  attr_reader :num, :den
+  attr_accessor :num, :den
   
   def initialize (num, den)
     raise TypeError, "No se puede dividir por 0" unless den != 0
@@ -25,7 +25,14 @@ class Fraccion
   end
   
   def == (fr)
-      ((self.num == fr.num) && (self.den == fr.den))
-  end    
+    ((self.num == fr.num) && (self.den == fr.den))
+  end
+  
+  def abs
+    Fraccion.new(@num.abs, @den)
+  end
+  
     
 end
+
+

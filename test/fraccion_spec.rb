@@ -51,11 +51,16 @@ describe Fraccion do
     @fr.new(1, 2).should_not == @fr.new(3, 4)
   end
   
+  it "Se debe calcular el valor absoluto de una fraccion con el metodo abs" do
+    @fr.new(-2, 3).abs.should == @fr.new(2, 3)
+    @fr.new(2, -4).abs.should == @fr.new(1, 2)
+    @fr.new(-1, 2).abs.should_not == @fr.new(-1, 2)
+  end
+  
 end
 
 =begin
 Fraccion  
-  it "Se debe calcular el valor absoluto de una fraccion con el metodo abs" do
   it "Se debe calcular el reciproco de una fraccion con el metodo reciprocal" do
   it "Se debe calcular el opuesto de una fraccion con -" do
   it "Se debe sumar dos fracciones con + y dar el resultado de forma reducida" do
