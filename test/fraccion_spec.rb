@@ -25,12 +25,15 @@ describe Fraccion do
     Fraccion.new(7, 21).den.should equal 3
   end
   
+  it "Se debe invocar al metodo num() para obtener el numerador" do
+    @fr.respond_to?("num").should be_true
+  end
 
 end
 
 =begin
 Fraccion  
-  it "Se debe invocar al metodo num() para obtener el numerador" do
+  
   it "Se debe invocar al metodo denom() para obtener el denominador" do
   it "Se debe mostar por la consola la fraccion de la forma: a/b, donde a es el numerador y b el denominador" do
   it "Se debe mostar por la consola la fraccion en formato flotante" do
