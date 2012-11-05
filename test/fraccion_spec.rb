@@ -16,6 +16,10 @@ describe Fraccion do
     @fr.den.should equal 2
   end
   
+  it "El denominador tiene que ser distinto de cero" do
+    lambda { Fraccion.new(1, 0)}.should raise_error(TypeError)
+  end
+  
 
 end
 
