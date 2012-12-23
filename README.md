@@ -1,75 +1,68 @@
+***
+>**Autora:**         *María D. Batista Galván*  
+>**Fecha:**          *Lunes 29 de Octubre de 2012*  
+>**Asignatura:**     *Lenguajes y Paradigmas de la Programación.*  
+>**Práctica:**       **Laboratorio 7 :** *Integración Continua*  
+***
 
-  Autora:	María D. Batista Galván
+##Pasos
 
-  Fecha:	Lunes 29 de Octubre de 2012
+> En dicha asignatura y para esta séptima práctica se debía realizar los siguientes pasos:  
 
-  Asignatura:	Lenguajes y Paradigmas de la Programación.
+> Considere el desarrollo de una **clase Ruby** para representar el juego de Piedra-Papel-Tijeras. Empiece desde cero, no reciclando código de las prácticas anteriores. La clave de esta práctica está en diseñar pruebas que dirijan el desarrollo y si reutiliza el desarrollo anterior estará haciéndolo mal.  
 
-  Práctica:	Laboratorio 7 : Integración Continua
+> Considere el desarrollo de una clase Ruby para representar números racionales. Empiece desde cero. La clave de la metodología TDD está en diseñar pruebas que dirijan el desarrollo.  
 
+>*  Cree una clase para representar números racional usando **Desarrollo Dirigido por el Comportamiento** (`Behavior Driven Development - BDD`) como caso particular del **Desarrollo dirigido por pruebas** (`Test Driven Development - TDD`) usando como herramienta `Rspec`.  
+Puede tomar como ejemplo la siguiente salida:  
 
-  Este repositorio está creado para la asignatura de "Lenguajes y Paradigmas de la Programación".
+	Racional  
+	Debe existir un numerador  
+	Debe existir un denominador  
+	Debe de estar en su forma reducida  
+	Se debe invocar al metodo num() para obtener el numerador  
+	Se debe invocar al metodo denom() para obtener el denominador  
+	Se debe mostar por la consola la fraccion de la forma: a/b, donde a es el numerador y b el denominador  
+	Se debe mostar por la consola la fraccion en formato flotante  
+	Se debe comparar si dos fracciones son iguales con ==  
+	Se debe calcular el valor absoluto de una fraccion con el metodo abs  
+	Se debe calcular el reciproco de una fraccion con el metodo reciprocal  
+	Se debe calcular el opuesto de una fraccion con -  
+	Se debe sumar dos fracciones con + y dar el resultado de forma reducida  
+	Se debe restar dos fracciones con - y dar el resultado de forma reducida  
+	Se debe multiplicar dos fracciones con * y dar el resultado de forma reducida  
+	Se debe dividir dos fracciones con / y dar el resultado de forma reducida  
+	Se debe calcular el resto dos fracciones con % y dar el resultado de forma reducida  
+	Se debe de poder comprobar si una fracion es menor que otra  
+	Se debe de poder comprobar si una fracion es mayor que otra  
+	Se debe de poder comprobar si una fracion es menor o igual que otra  
+	Se debe de poder comprobar si una fracion es mayor o igual que otra  
+	Finished in 0.00475 seconds  
+	20 examples, 0 failures  
 
+La clase se ha de compilar con la herramienta Travis de integración continua. Con ella se comprueba la portabilidad de los desarrollos entre distintas plataformas y versiones de Ruby.  
+Para ello realizar los siguientes pasos:  
+>>* Darse de alta en [travis](https://travis-ci.org/) y permitir que se acceda desde `github`.  
+>>* Crear un fichero **.travis.yml** que contenga el listado de plataformas:  
 
-  En dicha asignatura y para esta sexta práctica se debía realizar los siguientes pasos:
+	language: ruby  
+	rvm:  
+	- 1.9.3  
+	- jruby-18mode # JRuby in 1.8 mode  
+	- jruby-19mode # JRuby in 1.9 mode  
+	- rbx-18mode  
+	- rbx-19mode  
+	- 1.8.7  
 
-    Considere el desarrollo de una clase Ruby para representar el juego de Piedra-Papel-Tijeras. Empiece desde cero, 
-    no reciclando código de las prácticas anteriores. La clave de esta práctica está en diseñar pruebas que dirijan el 
-    desarrollo y si reutiliza el desarrollo anterior estará haciéndolo mal.
+>>* Crear un fichero **Rakefile** que contenga:  
 
-    Considere el desarrollo de una clase Ruby para representar números racionales. Empiece desde cero. La clave de la 
-    metodología TDD está en diseñar pruebas que dirijan el desarrollo.
+	$:.unshift File.dirname(__FILE__) + 'lib'    
+	require 'rspec/core/rake_task'  
+	RSpec::Core::RakeTask.new  
+	task :default => :spec  
 
-    1) Cree una clase para representar números racional usando Desarrollo Dirigido por el Comportamiento (Behavior 
-       Driven Development - BDD) como caso particular del Desarrollo dirigido por pruebas (Test Driven Development - TDD) 
-       usando como herramienta Rspec.
- 
-	Puede tomar como ejemplo la siguiente salida:
-	Racional
-	  Debe existir un numerador
-	  Debe existir un denominador
-	  Debe de estar en su forma reducida
-	  Se debe invocar al metodo num() para obtener el numerador
-	  Se debe invocar al metodo denom() para obtener el denominador
-	  Se debe mostar por la consola la fraccion de la forma: a/b, donde a es el numerador y b el denominador
-	  Se debe mostar por la consola la fraccion en formato flotante
-	  Se debe comparar si dos fracciones son iguales con ==
-	  Se debe calcular el valor absoluto de una fraccion con el metodo abs
-	  Se debe calcular el reciproco de una fraccion con el metodo reciprocal
-	  Se debe calcular el opuesto de una fraccion con -
-	  Se debe sumar dos fracciones con + y dar el resultado de forma reducida
-	  Se debe restar dos fracciones con - y dar el resultado de forma reducida
-	  Se debe multiplicar dos fracciones con * y dar el resultado de forma reducida
-	  Se debe dividir dos fracciones con / y dar el resultado de forma reducida
-	  Se debe calcular el resto dos fracciones con % y dar el resultado de forma reducida
-	  Se debe de poder comprobar si una fracion es menor que otra
-	  Se debe de poder comprobar si una fracion es mayor que otra
-	  Se debe de poder comprobar si una fracion es menor o igual que otra
-	  Se debe de poder comprobar si una fracion es mayor o igual que otra
+>>* Crear un fichero **Gemfile** que contenga:  
 
-	Finished in 0.00475 seconds
-	20 examples, 0 failures
-	La clase se ha de compilar con la herramienta Travis de integración continua. Con ella se comprueba la portabilidad 
-	de los desarrollos entre distintas plataformas y versiones de Ruby.
-	Para ello realizar los siguientes pasos:
-	1. Darse de alta en https://travis-ci.org/ y permitir que se acceda desde github.
-	2. Crear un fichero .travis.yml que contenga el listado de plataformas:
-	language: ruby
-	rvm:
-	  - 1.9.3
-	  - jruby-18mode # JRuby in 1.8 mode
-	  - jruby-19mode # JRuby in 1.9 mode
-	  - rbx-18mode
-	  - rbx-19mode
-	  - 1.8.7
-    3. Crear un fichero Rakefile que contenga:
-	$:.unshift File.dirname(__FILE__) + 'lib'
-
-	require 'rspec/core/rake_task'
-	RSpec::Core::RakeTask.new
-	task :default => :spec
-    4. Crear un fichero Gemfile que contenga:
-	source 'https://rubygems.org'
-
-	gem 'rake'
-	gem 'rspec'
+	source 'https://rubygems.org'  
+	gem 'rake'  
+	gem 'rspec'  
